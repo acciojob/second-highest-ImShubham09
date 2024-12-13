@@ -10,6 +10,22 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			// Convert array elements to numbers
+			arr = arr.map(Number);
+
+			// Remove duplicates
+			let uniqueElements = [...new Set(arr)];
+
+			// If less than 2 unique elements, return -Infinity
+			if (uniqueElements.length < 2) {
+				return -Infinity;
+			}
+
+			// Sort the unique elements in descending order
+			uniqueElements.sort((a, b) => b - a);
+
+			// Return the second-highest element
+			return uniqueElements[1];
 			
 		}
 
@@ -22,6 +38,7 @@
 			alert(secondHighest(arr));
 		}
 		Main();
+		
 	</script>
 
     <script type="text/javascript" src="./script.js">
